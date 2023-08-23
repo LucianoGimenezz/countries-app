@@ -1,0 +1,28 @@
+<section class="col">
+  <header class="row">
+    <h3>{{ country?.name?.common }} <span class="badge  bg-secondary">{{ country?.cca3 }}</span></h3>
+  </header>
+
+  <div class="row mt-4">
+    <div class="d-flex flex-column flex-md-row">
+      <div class="col col-md-4 mx-3">
+        <img [src]="country?.flags?.svg" [alt]="country?.name?.common" class="img-thumbnail rounded" />
+      </div>
+      <div class="col mt-2">
+        <ul class="list-group">
+          <li class="list-group-item"> Population: {{ country?.population | number}} </li>
+          <li class="list-group-item"> Region: {{ country?.region }}</li>
+          <li class="list-group-item">Languages: <span class="m-1 badge bg-secondary"
+              *ngFor="let language of languages">{{
+              language }}</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-2 d-flex">
+      <h3>Translation</h3>
+      <div class="d-flex flex-wrap">
+        <span *ngFor="let transaltion of translations" class="badge m-1 bg-primary">{{ transaltion }}</span>
+      </div>
+    </div>
+  </div>
+</section>
